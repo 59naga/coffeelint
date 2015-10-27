@@ -44,7 +44,7 @@
     "prepublish": "node -e \"if(process.env.npm_config_argv==='install'){}else{process.exit(1)}\" && cake prepublish || echo skip prepublish",
     "postpublish": "cake postpublish",
     "publish": "cake publish",
-    "install": "cake install",
+    "install": "node -e \"if(require('fs').existsSync('lib/commandline.js')){}else{process.exit(1)}\" && cake compile || echo skip compile",
     "lint": "cake compile && ./bin/coffeelint .",
     "lint-csv": "cake compile && ./bin/coffeelint --csv .",
     "lint-jslint": "cake compile && ./bin/coffeelint --jslint .",
