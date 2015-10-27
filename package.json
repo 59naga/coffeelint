@@ -41,7 +41,7 @@
     "test": "./vowsrunner.js --spec test/*.coffee test/*.litcoffee",
     "testrule": "npm run compile && ./vowsrunner.js --spec",
     "posttest": "npm run lint",
-    "prepublish": "node -e \"if(process.env.npm_config_argv){}else{process.exit(1)}\" && cake prepublish || echo skip prepublish",
+    "prepublish": "node -e \"if(process.env.npm_config_argv==='install'){}else{process.exit(1)}\" && cake prepublish || echo skip prepublish",
     "postpublish": "cake postpublish",
     "publish": "cake publish",
     "install": "cake install",
